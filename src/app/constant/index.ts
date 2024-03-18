@@ -16,14 +16,25 @@ export enum PrepareForExamTime {
   TwelveMonths = 12,
 };
 
+export enum ShuatiType {
+  ZhuanXiang = 1,
+  ZoneHe = 2,
+  Not_Limited = 3
+};
+
+export enum Goal {
+  Guoxian = 1,
+  Shuafen = 2
+}
+
 export interface FormValues {
-  prepare_exam: string;
+  prepare_exam: EnglishLevel;
   exam_type: EnglishLevel;
   score: number;
   prepare_time: PrepareForExamTime;
-  shuati_type: number;
+  shuati_type: ShuatiType;
   prefer_type: number;
-  goal: number;
+  goal: Goal;
 };
 
 export const FormQuestions = [
@@ -94,15 +105,15 @@ export const FormQuestions = [
     field: 'shuati_type',
     options: [
       {
-        value: 1,
+        value: ShuatiType.ZhuanXiang,
         label: '我有明显弱项/喜欢专项训练'
       },
       {
-        value: 2,
+        value: ShuatiType.ZoneHe,
         label: '专项太无聊，我喜欢综合刷题'
       },
       {
-        value: 3,
+        value: ShuatiType.Not_Limited,
         label: '都行'
       },
     ]
@@ -130,11 +141,11 @@ export const FormQuestions = [
     field: 'goal',
     options: [
       {
-        value: 1,
+        value: Goal.Guoxian,
         label: '过线万岁'
       },
       {
-        value: 2,
+        value: Goal.Shuafen,
         label: '刷分，越高越好'
       },
     ]

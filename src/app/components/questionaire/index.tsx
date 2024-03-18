@@ -3,10 +3,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Radio, Space, Button, Form, Checkbox, Input, InputNumber, message } from "antd";
 import FormLabel from "../form-label/index.tsx";
-import { EnglishLevel, FormQuestions, MAX_STEP, PrepareForExamTime } from "../../constant/index.ts";
+import { EnglishLevel, FormQuestions, FormValues, MAX_STEP, PrepareForExamTime } from "../../constant/index.ts";
 import '../../style/reset.css';
 import '../../style/index.css'
-import css from '../../public/qs.module.css';
+import './index.css';
 
 import image from '../../assets/stars.png';
 
@@ -22,18 +22,18 @@ const initialValues = {
   goal: null
 };
 
-
 const Questionare = (props: any) => {
   const [step, setStep] = useState<number>(0);
 
-  const { onShowResult } = props;
-
   const [showForm, setShowForm] = useState<boolean>(false);
-  const [showResult, setShowResult] = useState<boolean>(true);
+  const [showResult, setShowResult] = useState<boolean>(false);
 
   const [form] = Form.useForm();
 
+  const [finalResult, setFinalResult] = useState<any>(null);
+
   const handleShowResult = (): void => {
+    setFinalResult(form.getFieldsValue());
     setShowResult(true);
     // onShowResult?.();
     // if (imageWidth.current >= 200) {
@@ -50,20 +50,28 @@ const Questionare = (props: any) => {
       return;
     };
     const field = FormQuestions[step].field;
-    const value = form.getFieldsValue()?.[field];
+    const values = form.getFieldsValue();
+    const value = values?.[field];
+
     if (!value) {
       form.validateFields([field]);
       message.warning(`请选择答案才能做下一题哦~`);
     } else {
-      setStep(step + 1);
+      if (field === 'exam_type' && value && (values.score === undefined || values.score === null)) {
+        form.validateFields([field]);
+        message.warning(`请填写分数～`);
+      } else {
+        setStep(step + 1);
+      }
     };
   };
 
   const handleReset = () => {
     console.log(form.getFieldsValue());
     form.setFieldsValue(initialValues);
-
     setStep(0);
+    setShowResult(false);
+    window.location.reload();
   };
 
   useEffect(
@@ -75,6 +83,17 @@ const Questionare = (props: any) => {
     []
   );
 
+
+  const isBig = document.body.clientHeight > 900;
+
+  const style = isBig ? {
+    height: '64px',
+    borderRadius: '32px'
+  } : {
+    height: '48px',
+    borderRadius: '24px'
+  };
+
   return (
     <div className="w-full h-full">
       
@@ -85,7 +104,7 @@ const Questionare = (props: any) => {
 
         {showResult ? (
           <div className="flex justify-center">
-            <img src={image.src} width="140" style={{ zIndex: 10, marginTop: '-20px' }} />
+            <img src={image} width="140" style={{ zIndex: 10, marginTop: '-20px' }} />
           </div>
         ) : (
           <div className="absolute qsIndex text-center flex items-center justify-center alimama" style={{
@@ -131,7 +150,7 @@ const Questionare = (props: any) => {
             >
               {FormQuestions.map((item, index) => {
                 return (
-                  <div key={`form_${index}`}>
+                  <div key={`form_${index}`} className="w-full">
                     <Form.Item
                       label={
                         <FormLabel>
@@ -141,6 +160,7 @@ const Questionare = (props: any) => {
                       hidden={step !== index}
                       shouldUpdate
                       name={item.field}
+                      className="w-full"
                     >
                       <Radio.Group>
                         {item.options?.map(option => {
@@ -174,15 +194,15 @@ const Questionare = (props: any) => {
             </Form>
           )}
 
-          {showResult && <Result />}
+          {showResult && <Result data={finalResult} />}
         </div>
       </div>
 
-      <div className="w-full buttons mt-8">
-        <div className="w-full flex items-center justify-center" style={{ height: '64px', borderRadius: '34px', background: '#8B9CFA', fontSize: '20px' }} onClick={handleNextStep}>
+      <div className="w-full buttons mt-4" style={{ marginTop: isBig ? '26px' : '20px' }}>
+        <div className={`w-full flex items-center justify-center`} style={{ background: '#8B9CFA', fontSize: '20px', ...style }} onClick={handleNextStep}>
           {step >= MAX_STEP ? `查看结果` : '下一题'}
         </div>
-        <div className="w-full flex items-center justify-center" style={{ height: '64px', borderRadius: '34px', background: 'transparent', color: '#8B9CFA', fontSize: '20px' }} onClick={handleReset}>
+        <div className={`w-full flex items-center justify-center`} style={{ background: 'transparent', color: '#8B9CFA', fontSize: '20px', ...style }} onClick={handleReset}>
           重新作答
         </div>
       </div>

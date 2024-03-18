@@ -1,0 +1,23 @@
+/* @media screen and (max-width: 420) {
+  .bottomButton {
+    height: 48px;
+    border-radius: 24px;
+  };
+}
+
+@media screen and (min-width: 420) {
+  .bottomButton {
+    height: 64px;
+    border-radius: 32px;
+  }
+} */
+
+.bottomButton {
+  height: 48px;
+  border-radius: 24px;
+};
+
+.bottomButton1 {
+  height: 64px;
+  border-radius: 32px;
+};

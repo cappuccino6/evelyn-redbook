@@ -72,7 +72,6 @@ const handleRecommendHuangpishu = (values: FormValues) => {
    */
   result[1] = result[1] === Branch.Branch1 ? Branch.Branch2 : Branch.Branch1;
   const isBranch1 = result.filter(item => item === Branch.Branch1).length >= 2;
-
   console.log('======isCET4', values, isCET4);
 
   if (isBranch1) {

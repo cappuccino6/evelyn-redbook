@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Radio, Space, Button, Form, Checkbox, Input, InputNumber, message } from "antd";
 import FormLabel from "../form-label/index.tsx";
 import { EnglishLevel, FormQuestions, FormValues, MAX_STEP, PrepareForExamTime } from "../../constant/index.ts";
@@ -9,7 +7,6 @@ import '../../style/index.css'
 import './index.css';
 
 import image from '../../assets/stars.png';
-
 import Result from '../result/index.tsx';
 
 const initialValues = {
@@ -35,24 +32,21 @@ const Questionare = (props: any) => {
   const handleShowResult = (): void => {
     setFinalResult(form.getFieldsValue());
     setShowResult(true);
-    // onShowResult?.();
-    // if (imageWidth.current >= 200) {
-    //   cancelAnimationFrame(timer);
-    // } else {
-    //   setImageWidth(preWidth + 1);
-    //   timer = requestAnimationFrame(() => handleShowResult(preWidth + 1));
-    // }
   };
 
   const handleNextStep = () => {
-    if (step >= MAX_STEP) {
-      handleShowResult();
-      return;
-    };
     const field = FormQuestions[step].field;
     const values = form.getFieldsValue();
     const value = values?.[field];
-
+    console.log('=======value', field, values, value);
+    if (step >= MAX_STEP) {
+      if (!value) {
+        message.warning(`答完题才能查看结果哟~`);
+      } else {
+        handleShowResult();
+      };
+      return;
+    };
     if (!value) {
       form.validateFields([field]);
       message.warning(`请选择答案才能做下一题哦~`);
@@ -67,10 +61,10 @@ const Questionare = (props: any) => {
   };
 
   const handleReset = () => {
-    console.log(form.getFieldsValue());
-    form.setFieldsValue(initialValues);
-    setStep(0);
-    setShowResult(false);
+    // console.log(form.getFieldsValue());
+    // form.setFieldsValue(initialValues);
+    // setStep(0);
+    // setShowResult(false);
     window.location.reload();
   };
 

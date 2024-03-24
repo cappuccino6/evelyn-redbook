@@ -49,12 +49,12 @@ const handleRecommendHuayan = (values: FormValues) => {
   const isBranch1 = result.filter(item => item === Branch.Branch1)?.length >= 2;
   if (isBranch1) {
     return {
-      src: isCET4 ? require('../assets/huayan_siji_zhinan.jpg') : require('../assets/huayan_liuji_zhinan.jpg'),
+      src: isCET4 ? require('../assets/huayan_siji_zhinan.jpeg') : require('../assets/huayan_liuji_zhinan.jpeg'),
       title: '华研考试指南'
     };
   }
   return {
-    src: isCET4 ? require('../assets/huayan_siji_zhenti.png') : require('../assets/huayan_liuji_zhenti.jpg'),
+    src: isCET4 ? require('../assets/huayan_siji_zhenti.jpeg') : require('../assets/huayan_liuji_zhenti.jpeg'),
     title: '华研真题集训'
   };
 };
@@ -76,13 +76,13 @@ const handleRecommendHuangpishu = (values: FormValues) => {
 
   if (isBranch1) {
     return {
-      src: isCET4 ? require('../assets/huangpishu_siji_zhenti.png') : require('../assets/huangpishu_liuji_zhenti.png'),
+      src: isCET4 ? require('../assets/huangpishu_siji_zhenti.jpeg') : require('../assets/huangpishu_liuji_zhenti.jpeg'),
       title: '12套真题详解'
     };
   };
 
   return {
-    src: isCET4 ? require('../assets/huangpishu_siji_xueba.png') : require('../assets/huangpishu_liuji_xueba.jpg'),
+    src: isCET4 ? require('../assets/huangpishu_siji_xueba.jpeg') : require('../assets/huangpishu_liuji_xueba.jpeg'),
     title: '学霸狂练18+6'
   };
 };
@@ -99,12 +99,12 @@ const handleRecommendXinghuo = (values: FormValues) => {
 
   if (isBranch1) {
     return {
-      src: isCET4 ? require('../assets/xinghuo_siji_tongguan.jpg') : require('../assets/xinghuo_liuji_tongguan.jpg'),
+      src: isCET4 ? require('../assets/xinghuo_siji_tongguan.jpeg') : require('../assets/xinghuo_liuji_tongguan.jpeg'),
       title: isCET4 ? '四级通关' : '六级通关'
     };
   }
   return {
-    src: isCET4 ? require('../assets/xinghuo_siji_zhenti.jpg') : require('../assets/xinghuo_liuji_zhenti.jpg'),
+    src: isCET4 ? require('../assets/xinghuo_siji_zhenti.jpeg') : require('../assets/xinghuo_liuji_zhenti.jpeg'),
     title: '全真试题+标准模拟'
   };
 };

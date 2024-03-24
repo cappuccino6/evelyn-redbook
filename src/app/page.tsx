@@ -6,19 +6,19 @@ import { useState } from "react";
 import React from "react";
 
 
-import image1 from './assets/huangpishu_liuji_xueba.jpg';
-import image2 from './assets/huangpishu_liuji_zhenti.png';
-import image3 from './assets/huangpishu_siji_xueba.png';
-import image4 from './assets/huangpishu_siji_zhenti.png';
-import image5 from './assets/huayan_liuji_zhenti.jpg';
-import image6 from './assets/huayan_liuji_zhinan.jpg';
-import image7 from './assets/huayan_siji_zhenti.png';
-import image8 from './assets/huayan_siji_zhinan.jpg';
+import image1 from './assets/huangpishu_liuji_xueba.jpeg';
+import image2 from './assets/huangpishu_liuji_zhenti.jpeg';
+import image3 from './assets/huangpishu_siji_xueba.jpeg';
+import image4 from './assets/huangpishu_siji_zhenti.jpeg';
+import image5 from './assets/huayan_liuji_zhenti.jpeg';
+import image6 from './assets/huayan_liuji_zhinan.jpeg';
+import image7 from './assets/huayan_siji_zhenti.jpeg';
+import image8 from './assets/huayan_siji_zhinan.jpeg';
 
-import image9 from './assets/xinghuo_siji_zhenti.jpg';
-import image10 from './assets/xinghuo_siji_tongguan.jpg';
-import image11 from './assets/xinghuo_liuji_zhenti.jpg';
-import image12 from './assets/xinghuo_liuji_tongguan.jpg';
+import image9 from './assets/xinghuo_siji_zhenti.jpeg';
+import image10 from './assets/xinghuo_siji_tongguan.jpeg';
+import image11 from './assets/xinghuo_liuji_zhenti.jpeg';
+import image12 from './assets/xinghuo_liuji_tongguan.jpeg';
 
 import starImage from './assets/stars.png';
 

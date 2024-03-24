@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/evelyn-redbook/static/css/main.62a7a83c.css",
+    "main.js": "/evelyn-redbook/static/js/main.eed14d5f.js",
+    "static/js/453.65caaa27.chunk.js": "/evelyn-redbook/static/js/453.65caaa27.chunk.js",
+    "static/media/AlimamaShuHeiTi-Bold.ttf": "/evelyn-redbook/static/media/AlimamaShuHeiTi-Bold.6a14696d36301747cf51.ttf",
+    "static/media/huangpishu_siji_zhenti.jpeg": "/evelyn-redbook/static/media/huangpishu_siji_zhenti.4a55d5c624a3ad38b613.jpeg",
+    "static/media/huangpishu_siji_xueba.jpeg": "/evelyn-redbook/static/media/huangpishu_siji_xueba.fec3cf07bb4be823423f.jpeg",
+    "static/media/xinghuo_liuji_tongguan.jpeg": "/evelyn-redbook/static/media/xinghuo_liuji_tongguan.e005c92fdded75d08a0b.jpeg",
+    "static/media/xinghuo_siji_tongguan.jpeg": "/evelyn-redbook/static/media/xinghuo_siji_tongguan.5a118c179b8ff9260a3f.jpeg",
+    "static/media/huayan_liuji_zhenti.jpeg": "/evelyn-redbook/static/media/huayan_liuji_zhenti.5419cd327f899ccb6bfb.jpeg",
+    "static/media/huayan_siji_zhenti.jpeg": "/evelyn-redbook/static/media/huayan_siji_zhenti.4a5868c4abc9c4667af0.jpeg",
+    "static/media/huayan_siji_zhinan.jpeg": "/evelyn-redbook/static/media/huayan_siji_zhinan.66d7b72973b3bdd40062.jpeg",
+    "static/media/xinghuo_liuji_zhenti.jpeg": "/evelyn-redbook/static/media/xinghuo_liuji_zhenti.93385985c76a4161aeb2.jpeg",
+    "static/media/xinghuo_siji_zhenti.jpeg": "/evelyn-redbook/static/media/xinghuo_siji_zhenti.2496790d2c1fa3975e10.jpeg",
+    "static/media/huayan_liuji_zhinan.jpeg": "/evelyn-redbook/static/media/huayan_liuji_zhinan.4cd7dd05e81d51899c61.jpeg",
+    "static/media/huangpishu_liuji_xueba.jpeg": "/evelyn-redbook/static/media/huangpishu_liuji_xueba.acc17b89d5c2b9c593a3.jpeg",
+    "static/media/huangpishu_liuji_zhenti.jpeg": "/evelyn-redbook/static/media/huangpishu_liuji_zhenti.975f3a686b9d2d322e8c.jpeg",
+    "index.html": "/evelyn-redbook/index.html",
+    "main.62a7a83c.css.map": "/evelyn-redbook/static/css/main.62a7a83c.css.map",
+    "main.eed14d5f.js.map": "/evelyn-redbook/static/js/main.eed14d5f.js.map",
+    "453.65caaa27.chunk.js.map": "/evelyn-redbook/static/js/453.65caaa27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62a7a83c.css",
+    "static/js/main.eed14d5f.js"
+  ]
+}
